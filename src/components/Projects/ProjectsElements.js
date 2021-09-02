@@ -182,7 +182,7 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
     width: 75%;
-    height: 75%
+    height: 75%;
     padding-right: 0;
     border-radius: 50%;
 `;
@@ -238,7 +238,7 @@ export const Button = styled.a`
     font-size: 20px;
     text-decoration: none;
     padding: 10px;
-    margin-top: 125px;
+    margin-top: 110px;
     margin-right: 250px;
     margin-left: 250px;
     margin-bottom: 50px;

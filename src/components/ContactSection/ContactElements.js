@@ -105,7 +105,8 @@ export const StyledTitle = styled.h1`
     text-align: center;
 
     @media (max-width: 700px) {
-        text-align: left; 
+        text-align: center; 
+        font-size: 50px;
     }
 `; 
 

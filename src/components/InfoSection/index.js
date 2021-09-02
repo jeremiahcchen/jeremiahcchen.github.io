@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Button } from '../ButtonElements'
+import Icon from '../../images/Jeremiah_Chen_Resume.pdf'
+
 
 import {
     InfoContainer,
@@ -15,6 +16,7 @@ import {
     ButtonWrap,
     ImgWrap,
     Img,
+    Button,
 } from './InfoElements'
 
 const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headLine,
@@ -30,8 +32,8 @@ darkText, description, description2, buttonLabel, img, alt, primary, dark, dark2
                                 <Heading lightText={lightText}>{headLine}</Heading>
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <Subtitle darkText={darkText}>{description2}</Subtitle>
-                                <ButtonWrap>
-                                    <Button to='home'
+                                <ButtonWrap href={Icon} target='_blank'>
+                                    <Button
                                     smooth={true}
                                     duration={500}
                                     spy={true}
@@ -40,7 +42,7 @@ darkText, description, description2, buttonLabel, img, alt, primary, dark, dark2
                                     primary={primary ? 1 : 0}
                                     dark={dark ? 1 : 0}
                                     dark2={dark2 ? 1 : 0}
-                                    >{buttonLabel} </Button>
+                                    > My Resume </Button>
                                 </ButtonWrap>
                             </TextWrapper>
                         </Column1>

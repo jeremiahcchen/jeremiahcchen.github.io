@@ -124,9 +124,12 @@ const Projects = () => {
                                 with the help of React and styled-components for CSS. I self-taught myself React and
                                 this is my first React project. I learned the usefulness of React Hooks and the
                                 intricate ways to style the website with style-components. 
+                                <br/>
+                                <br/>
+                                Features are still being implemented.
                             </Subtitle>
-                            <Button href='https://github.com/jeremiahcchen/' target='_blank' aria-label='Github'> 
-                                <FaGithub/>  Not Done
+                            <Button href='https://jeremiahcchen.github.io' target='_blank' aria-label='Github'> 
+                                <FaGithub/>  Website Link
                             </Button>
                         </TextWrapper>
                     </Column2>

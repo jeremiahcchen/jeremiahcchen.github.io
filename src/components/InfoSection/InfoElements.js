@@ -83,9 +83,32 @@ export const Subtitle = styled.p`
     color: ${({darkText}) => (darkText ? '#010606' : '#fff')};
 `;
 
-export const ButtonWrap = styled.div`
+export const ButtonWrap = styled.a`
+    text-decoration: none;
     display: flex;
     justify-content: flex-start;
+`;
+
+export const Button = styled.button`
+    font-size: 20px;
+    border-radius: 50px;
+    background: ${({primary}) => (primary ? '#01BF71' : '#010606')};
+    white-space: nowrap;
+    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({dark}) => (dark ? '#010606' : '#fff')};
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: ${({primary}) => (primary ? '#fff' : '#01BF71')};
+    }
+
 `;
 
 export const ImgWrap = styled.div`
@@ -96,7 +119,7 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
     width: 100%;
-    height: 100%
+    height: 100%;
     margin: 0 0 10px 0;
     padding-right: 0;
     border-radius: 35%;
