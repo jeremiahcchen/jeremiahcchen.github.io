@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import emailjs from 'emailjs-com'
 
 import {
     ContactWrapper,
@@ -17,29 +18,18 @@ import {
 
 const ContactSection = () => {
 
-    const [status, setStatus] = useState("Submit");
-    const handleSubmit = async (e) => {
+    function sendEmail(e) {
         e.preventDefault();
-        setStatus("Sending...");
-        const { name, email, message } = e.target.elements;
-        let details = {
-            name: name.value,
-            email: email.value,
-            message: message.value,
-        };
 
-        let response = await fetch("http://localhost:3000/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            body: JSON.stringify(details),
-        });
-        setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
-    };
+        emailjs.sendForm('gmail', 'contact_template', e.target, 'user_qAJb2FiKxBIlpPqIXLFnX')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
+        e.target.reset();
+    }
 
     return (
         <>
@@ -48,7 +38,7 @@ const ContactSection = () => {
                 <Container wrapper>
                     <div>
                     {/* <h3>Email Us</h3> */}
-                        <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={sendEmail}>
                             <WrapperGrid>
                                 <Label htmlFor="name">Name</Label>
                                 <Input type="text" name="name" required />
@@ -56,15 +46,15 @@ const ContactSection = () => {
     
                             <WrapperGrid>
                                 <Label htmlFor="email">Email Address</Label>
-                                <Input type="email" id="email" required />
+                                <Input type="email" name="email" required />
                             </WrapperGrid>
     
                             <WrapperGrid full>
                                 <Label htmlFor="message">Message</Label>
-                                <Textarea id="message" rows="5" required />
+                                <Textarea name="message" rows="5" required />
                             </WrapperGrid>
                             <WrapperGrid full>
-                                <StyledButton type="submit">{status}</StyledButton>
+                                <StyledButton type="submit" value="Submit">Submit</StyledButton>
                             </WrapperGrid>
                         </Form>
                     </div>
